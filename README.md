@@ -169,6 +169,7 @@ int main() {
 ```
 
 **Пример использования fscanf_s и fprintf_s**
+
 ```
 #include <iostream>
 #include <cstdio>
@@ -220,6 +221,7 @@ int main() {
     return 0;
 }
 ```
+
 **Использование fseek и ftell**
 
 ```
