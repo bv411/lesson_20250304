@@ -14,7 +14,7 @@
 Текстовый файл: document.txt\
 Изображение: photo.jpg\
 Аудиофайл: song.mp3\
-Программа: app.exe\
+Программа: app.exe
 
 Файлы организуются в папки (директории), что позволяет упорядочивать данные на устройстве.\
 Операционная система управляет файлами, предоставляя пользователю доступ к ним через файловый менеджер или другие программы.
@@ -28,11 +28,12 @@
 
  - fopen_s:
 
-    Синтаксис: errno_t fopen_s(FILE** file, const char* filename, const char* mode);
+   Синтаксис: errno_t fopen_s(FILE** file, const char* filename, const char* mode);
 
    Открывает файл и возвращает код ошибки.
 
   Пример:
+  
 ```
 FILE* file;
 errno_t err = fopen_s(&file, "example.txt", "r");
@@ -62,20 +63,22 @@ if (err != 0) {
     }
    ```
    
- - fscanf() — scanf_s:
+ - scanf_s:
 
    Синтаксис: errno_t fscanf_s(FILE* file, const char* format, ...);
 
-    Читает форматированные данные из файла с проверкой безопасности.
+   Читает форматированные данные из файла с проверкой безопасности.
 
-    Пример:
-   ```
+   Пример:
+   
+```
    int value;
-errno_t err = fscanf_s(file, "%d", &value);
-if (err != 0) {
-    // Обработка ошибки
-}
-   ```
+   errno_t err = fscanf_s(file, "%d", &value);
+   if (err != 0) {
+     // Обработка ошибки
+   }
+```
+
 - fgets_s:
 
   Синтаксис: char* fgets_s(char* buffer, size_t bufferSize, FILE* file);
@@ -83,6 +86,7 @@ if (err != 0) {
   Читает строку из файла с ограничением по размеру буфера.
 
   Пример:
+
 ```
 char buffer[100];
 if (fgets_s(buffer, sizeof(buffer), file)) {
@@ -90,7 +94,6 @@ if (fgets_s(buffer, sizeof(buffer), file)) {
 }
 ```
 
-   
  - fwrite():
 
   Синтаксис: size_t fwrite(const void* buffer, size_t size, size_t count, FILE* file);
@@ -111,11 +114,10 @@ if (fgets_s(buffer, sizeof(buffer), file)) {
 
     Перемещает указатель в файле.
 
-    whence:\
+    whence:
       - SEEK_SET — от начала файла.
       - SEEK_CUR — от текущей позиции.
       - SEEK_END — от конца файла.
-
 
  - ftell()
 
@@ -123,13 +125,11 @@ if (fgets_s(buffer, sizeof(buffer), file)) {
 
     Возвращает текущую позицию указателя в файле.
 
-
  - feof() — проверяет, достигнут ли конец файла.
 
-  интаксис: int feof(FILE* file);
+   интаксис: int feof(FILE* file);
 
-  Проверяет, достигнут ли конец файла.
-
+   Проверяет, достигнут ли конец файла.
 
 **Использование fseek и ftell**
 
@@ -258,5 +258,4 @@ int main() {
 
     return 0;
 }
-
 ```
